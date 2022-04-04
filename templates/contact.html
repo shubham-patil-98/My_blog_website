@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}contact
+{% endblock title %}
+{% block body %}
+<div>
+    <br>
+    <div class="text-center">
+        <img src="/static/image/contact.jpg" alt="">
+    </div>
+    <div class="container-fluid">
+        <h3 class="text-center">contact us</h3>
+    </div>
+    <br>
+</div>
+<div class="container">
+    <form method="post" action="/contact">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input type="Name" class="form-control" name="Name" id="enter your name">
+            <div id="Name" class="form-text">Enter your name here</div>
+        </div>
+        <div class="mb-3">
+            <label for="Email" class="form-label">Email address</label>
+            <input type="Email" class="form-control" name="Email" id="Email" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="Password" class="form-control" name="Password" id="Password">
+        </div>
+        <div class="mb-3">
+            <label for="Reason" class="form-label">Reason</label>
+            <input type="Reason" class="form-control" name="Reason" id="Reason">
+            <div id="Reason" class="form-text">Reason for contacting us</div>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+    </form>
+    <br>
+</div>
+{% endblock body %}
